@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); 
+/* Importa las fuentes "Krona One" y "Montserrat" desde Google Fonts */
+
+:root{
+    --color--primario: #000000; 
+    --color-secundario: #f6f6f6; 
+    --color-terciario: #22D4FD;
+    /* Variables de colores definidas para el esquema de color */
+
+    --fuente-monserrat: "Montserrat", sans-serif;
+    --fuente-kron: "Krona One", sans-serif;
+    /* Variables para las fuentes utilizadas en el sitio */
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    /* Elimina el padding y margen por defecto de todos los elementos */
+}
+
+body{
+    background-color: var(--color--primario);
+    color: var(--color-secundario);
+    height: 100vh; 
+    /* La página ocupa el 100% de la altura del viewport */
+
+    box-sizing: border-box;
+    /* Asegura que padding y border se incluyan en las dimensiones totales de los elementos */
+}
+
+.menu{
+    display: flex;   
+    text-decoration: none;
+    gap: 5rem;
+    padding: 4%  0%  0% 15%;
+    /* Define el layout del menú, usa flexbox para alinear los enlaces horizontalmente, con un espacio entre ellos */
+}
+
+.menu__link{
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:  var(--color-terciario);
+    text-decoration: none;  
+    /* Estilos para los enlaces del menú: fuente, tamaño, color, etc. */
+} 
+
+.container-presentacion{
+    display: flex; 
+    align-items: center; 
+    padding: 3% 15%;
+    justify-content: space-between;
+    gap: 82px;
+    /* Utiliza flexbox para alinear los elementos dentro de esta sección */
+}
+
+@media (min-width: 48rem) {
+    .container-presentacion {
+        flex-direction: row;
+        justify-content: space-between;
+        /* Ajusta la dirección y alineación de los elementos cuando el ancho de pantalla es de al menos 48rem (768px) */
+    }
+}
+
+.destaque{
+    color: var(--color-terciario);
+    /* Resalta el texto usando el color terciario */
+}
+
+.presentacion__contenido{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    /* Contenedor para el contenido textual, se organiza en una columna con un espacio entre elementos */
+}
+
+.presentacion__contenido__titulo{
+   font-size: 2.25rem; 
+   font-family: var(--fuente-kron);
+   /* Estilos para el título principal de la sección de presentación */
+}
+
+.presentacion__contenido__parrafo{
+    font-size: 1.5rem;
+    font-family: "Montserrat", sans-serif;
+    /* Estilos para el párrafo dentro de la sección de presentación */
+}
+
+.contenedor_imagen{
+    position: relative;
+    width: 29.2319rem;
+    height: 31.25rem;  
+    /* Define el tamaño del contenedor de la imagen */
+}
+
+.axel{
+    position: absolute;
+    border-radius: 1rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; 
+    /* Define la posición y tamaño de la imagen, y la coloca en el nivel superior */
+}
+
+.border__axel{
+    width: 100%;
+    height: 100%;
+    border: solid 0.125rem var(--color-terciario);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 1.125rem;
+    left: 1.1563rem;
+    z-index: 1; 
+    /* Crea un borde decorativo alrededor de la imagen */
+}
+
+.presentacion__enlaces__subtitulo{
+    font-size: 1.5rem;
+    font-family: var(--fuente-kron);
+    font-weight: 400;
+    /* Estilos para el subtítulo de la sección de enlaces */
+}
+
+.presentacion__contenido__enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; 
+    align-items: center;
+    gap: 2rem;
+    /* Organización de los enlaces de forma vertical */
+}
+
+.presentacion__enlaces__link{
+    width: 50%;
+    border: solid 0.125rem #22D4FD;
+    border-radius: 0.5rem ;
+    text-align: center;
+    padding: 1.3438rem 0;
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;    
+    /* Estilos para los enlaces de redes sociales */
+}
+
+.presentacion__enlaces__link:hover{
+    background-color: #272727;
+    /* Cambio de color de fondo cuando se pasa el mouse por encima */
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    font-family: var(--fuente-monserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color--primario);
+    align-items: center;
+    /* Estilos para el pie de página */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 48rem) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 2vh 0;
+        /* Ajustes para el menú en pantallas más pequeñas: cambiar a columna y centrar los enlaces */
+    }
+
+    .menu__link {
+        font-size: 19.2px;
+        /* Disminuye el tamaño de la fuente de los enlaces del menú */
+    }
+
+    .container-presentacion {
+        padding: 2vh 5vw;
+        /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .presentacion__contenido__titulo {
+        font-size: 24px;
+        /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .presentacion__contenido__parrafo {
+        font-size: 16px;
+        /* Reduce el tamaño de la fuente del párrafo */
+    }
+
+    .presentacion__enlaces__link {
+        font-size: 16px;
+        padding: 12.8px;
+        max-width: 15.625rem;
+        /* Ajusta el tamaño y padding de los enlaces en pantallas pequeñas */
+    }
+}
+
+/*SOBRE MI*/
+
+.container-sobremi{
+    display: flex; 
+    align-items: center; 
+    padding: 6% 15%;
+    justify-content: space-between;
+    gap: 82px;
+    /* Estilos similares al container de presentación, pero para la sección "Sobre mí" */
+}
+
+.presentacion__contenido{
+    width: 38.4375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    /* Contenedor para el contenido textual de la sección "Sobre mí" */
+}
+
+.presentacion__contenido__sobremi{
+   font-size: 2.25rem; 
+   font-family: var(--fuente-kron);
+   /* Estilos para el título de la sección "Sobre mí" */
+}
+
+.presentacion__contenido__parrafo__sobremi{
+    font-size: 1.5rem;
+    font-family: var(--fuente-monserrat);
+    font-weight: 400;
+    /* Estilos para el párrafo dentro de la sección "Sobre mí" */
+}
+
+
+
+/*ESTILOS CURRICULUM*/
+
+/*ESTILOS CURRICULUM*/
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.contenido__curriculum {
+    display: flex; /*Los elementos quedan unos al lado de los otros*/
+    align-items: flex-start; /*Alinea los elementos al inicio del eje vertical*/
+    padding: 3% 15%;
+    justify-content: space-between;
+    gap: 5rem;
+    width: 80%; /*Ajusta el ancho al 80% del contenedor padre*/
+    background-color: #0f0f0f;
+    margin: 0 auto; /*Centra el contenedor horizontalmente*/
+    width: 37.5rem;
+    height: 48.75rem;
+    margin-top: 3.125rem;
+    border-radius: 1.875rem;
+}
+
+.contenido__Nombre {
+    width: 50%; /*Ajusta el ancho al 50% del contenedor padre*/
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.contenido__nombre__principal {
+    font-size: 4.375rem;
+    font-family: "Anton", sans-serif; 
+    margin-bottom: 3.125rem;
+    letter-spacing: 0.1875rem;
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
+
+.contenido__nombre__profesion {
+    font-size: 0.9375rem;
+    font-family: var(--fuente-kron);
+    border: solid 0.125rem var(--color-terciario);
+    border-radius: 1.5625rem;
+    padding: 0.3125rem;
+    text-align: center;
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
+
+.Experiencia {
+    font-family: "Krona-one", sans-serif;
+    font-size: 1.25rem;
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
+
+.experiencias {
+    font-family: "Krona-one", sans-serif;
+    font-size: 0.9375rem;
+    list-style-type: none;
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
+
+.perfil {
+    width: 40%; /*Ajusta el ancho al 30% del contenedor padre*/
+    margin-top: 4.375rem; /*Elimina márgenes innecesarios*/
+    font-family: "Krona-one", sans-serif;
+}
+
+.foto {
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    display: block; /*Asegura que la imagen se comporte como un bloque*/
+    margin: 0 auto; /*Centra la imagen horizontalmente*/
+    border: solid 0.125rem #22D4FD; 
+
+}
+
+.perfil__presentacion {
+    margin-top: 3.125rem;
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
+
+.skills {
+    margin-top: 2.5rem;
+    list-style-type: none;
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
+
+.habilidad {
+    list-style-type: none;
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+    margin-top: 1.25rem;
+}
+
+.estrellas{
+    width: 6.25rem;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+}
+
+.contacto {
+    margin-top: 2.5rem;
+    
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
+
+.contacto__datos {
+    margin-top: 1.25rem;   
+    list-style-type: none; 
+    color: #fff; /*Asegura que el texto sea visible sobre el fondo oscuro*/
+}
